@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="styles/nysl(mejorado).css">
+    <title>About NYSL</title>
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/css/bootstrap.min.css"
+        integrity="sha384-SI27wrMjH3ZZ89r4o+fGIJtnzkAnFs3E4qz9DIYioCQ5l9Rd/7UAa8DHcaL8jkWt" crossorigin="anonymous">
+
+    <!-- icono -->
+    <link rel="shortcut icon" sizes="128x128" href="imagenes/nysl_logo.png">
+    <link rel="shortcut icon" sizes="196x196" href="imagenes/nysl_logo.png">
+
+    <link rel="apple-touch-icon" href="imagenes/nysl_logo.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="imagenes/nysl_logo.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="imagenes/nysl_logo.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="imagenes/nysl_logo.png">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimal-ui">
+
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, 
+    initial-scale=1, maximum-scale=1, user-scalable=no">
+
+    <!-- Responsive meta tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <!-- Material Design Lite -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.blue_grey-orange.min.css">
+    <script src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+
+    <link rel="stylesheet" href="main.css">
+
+</head>
+
+<body>
+    <nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#index" onclick="mostrarPagina('index')">
+            <img src="imagenes\nysl_logo.png" width="50" height="50" alt="">
+        </a>
+        <!-- Image and text -->
+        <a class="navbar-brand" href="#posts" onclick="mostrarPagina('posts')">
+            <img src="imagenes\chat.png" width="50" height="50" alt="">
+        </a>
+
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#about" onclick="mostrarPagina('about')">About NYSL <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#registration" onclick="mostrarPagina('registration')">Registration <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#game_info" onclick="mostrarPagina('game_info')">Game Information <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#rules" onclick="mostrarPagina('rules')">Rules <span
+                            class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="#contact" onclick="mostrarPagina('contact')">Contact <span
+                            class="sr-only">(current)</span></a>
+                </li>
+        </div>
+
+    </nav>
+
+    <div id="posts" class="pagina d-none">
+        <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+
+            <!-- Splash screen -->
+            <section id="page-splash">
+                <h2 class="logo"></h2>
+                <div>
+                    <button id="sign-in-button"
+                        class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i
+                            class="material-icons">account_circle</i> Sign in with Google</button>
+                </div>
+            </section>
+
+            <!-- Header section containing logo and menu -->
+            <header class="header mdl-layout__header mdl-color-text--white mdl-color--grey-700">
+
+                <div class="mdl-layout__header-row titlebar">
+                    <h3 class="logo"></h3>
+                    <button id="sign-out-button"
+                        class="mdl-button--raised mdl-button mdl-js-button mdl-js-ripple-effect"><i
+                            class="material-icons">account_circle</i> Sign out</button>
+                </div>
+
+                <!-- Navigation Bar -->
+                <div class="tab mdl-layout__header-row mdl-color--grey-700">
+                    <div class="mdl-tab">
+                        <div id="menu-recent"
+                            class="mdl-layout__tab is-active mdl-button mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">new_releases</i> Recent
+                        </div>
+                        <div id="menu-my-posts" class="mdl-layout__tab mdl-button mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">home</i> My posts
+                        </div>
+                        <div id="menu-my-top-posts"
+                            class="mdl-layout__tab mdl-button mdl-js-button mdl-js-ripple-effect">
+                            <i class="material-icons">trending_up</i> My top posts
+                        </div>
+                        <button
+                            class="mdl-button mdl-js-button mdl-button--fab mdl-color--amber-400 mdl-shadow--4dp mdl-js-ripple-effect"
+                            id="add">
+                            <i class="material-icons">mode_edit</i>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <main class="mdl-layout__content mdl-color--grey-100">
+
+                <!-- Show the add post form -->
+                <section class="mdl-grid content" id="add-post" style="display:none">
+                    <div class="mdl-cell mdl-cell--12-col mdl-grid">
+
+                        <!-- Card containing the inputs to add a new messages -->
+                        <div class="mdl-card mdl-shadow--2dp mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet
+                        mdl-cell--6-col-desktop">
+                            <div class="mdl-card__title mdl-color--grey-600 mdl-color-text--white">
+                                <h2 class="mdl-card__title-text">New Post</h2>
+                            </div>
+                            <div class="mdl-card__supporting-text mdl-color-text--grey-600">
+                                <form id="message-form" action="#">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <input class="mdl-textfield__input" type="text" id="new-post-title">
+                                        <label class="mdl-textfield__label" for="new-post-title">Post title...</label>
+                                    </div>
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                                        <textarea class="mdl-textfield__input" rows="3"
+                                            id="new-post-message"></textarea>
+                                        <label class="mdl-textfield__label" for="new-post-message">Post
+                                            message...</label>
+                                    </div>
+                                    <button type="submit"
+                                        class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect">
+                                        Add post
+                                    </button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Show a list of recent posts -->
+                <section class="mdl-grid content" id="recent-posts-list" style="display:none">
+                    <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
+                    </div>
+                </section>
+
+                <!-- Show the list of user's posts -->
+                <section class="mdl-grid content" id="user-posts-list" style="display:none">
+                    <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
+                    </div>
+                </section>
+
+                <!-- Show the list of top user's posts -->
+                <section class="mdl-grid content" id="top-user-posts-list" style="display:none">
+                    <div class="posts-container mdl-cell mdl-cell--12-col mdl-grid">
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <div id="index" class="pagina">
+        <header class="container" id="titulo">
+            <h1>Northside Youth Soccer League</h1>
+        </header>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-1 leftNav">
+
+                </div>
+                <div class="col-md-10 content">
+                    <h3>August 4</h3>
+                    <article class="sangria">
+                        <p>NYSL Fundraiser</p>
+                    </article>
+                    <h3>August 16</h3>
+                    <article class="sangria">
+                        <p>Season Kick-off: Meet the Teams</p>
+                    </article>
+                    <h3>September 1</h3>
+                    <article class="sangria">
+                        <p>First Game of the Season (Check Game Schedule for details)</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="about" class="pagina d-none">
+        <header class="container" id="titulo">
+            <h1>Northside Youth Soccer League</h1>
+        </header>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-1 leftNav">
+
+                </div>
+                <div class="col-md-10 content">
+                    <h2>About NYSL</h2>
+                    <h2>Mission</h2>
+                    <article class="sangria">
+                        <p>To support young athletes living in Chicago's northside neighborhoods, Who have an
+                            interest in learning and playing soccer, with opportunities to learn and practice skills
+                            related to the game of soccer, specifically those skills
+                            around team cooperation and good sportsmanship</p>
+                    </article>
+                    <h2>Vision</h2>
+                    <article class="sangria">
+                        <p>The Northside YouthSoccer Leagues aspires to develop strong, well-rounded, and mindful
+                            athletes throught the building of character, self-discipline, and leadership.</p>
+                    </article>
+                    <h2>General information</h2>
+                    <article class="sangria">
+                        <p>The Northside Youth Soccer was established in 1996 to provide athletes residing in
+                            Chicago's northside neighborhoods an environment in which to learn and play soccer. To
+                            be a member of NYSL, you must be between the ages og 4 -
+                            12 and reside in a Chicago northside neighborhood. NYSL is ran by a small full-time
+                            staff, and relies on the generous volunteer time parents and previous league members.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="contact" class="pagina d-none">
+        <header class="container" id="titulo">
+            <h1>Northside Youth Soccer League</h1>
+        </header>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-1 leftNav">
+
+                </div>
+                <div class="col-md-10 content">
+                    <h2>Contact</h2>
+                    <article class="sangria">
+                        <p>Please email us at </p>
+                        <a href="email.html">nysl@chisoccer.org</a>
+                        <p>We will reply to you email as soon as we can.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="rules" class="pagina d-none">
+        <header class="container" id="titulo">
+            <h1>Northside Youth Soccer League</h1>
+        </header>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-1 leftNav">
+
+                </div>
+                <div class="col-md-10 content">
+                    <h2>RULES OF PLAY & POLICIES</h2>
+                    <p>FIFA rules shall govern NYSL play except as modified herein.</p>
+                    <h3>SPORTSMANSHIP</h3>
+                    <ul class="cuadrados">
+                        <li>The common interest that members of the Association share is to inspire youth to
+                            practice the ideals of sportsmanship and fair play. Any player, coach, team, parent,
+                            spectator, administrator or referee whose behavior detracts from
+                            this purpose is subject to disciplinary action regardless of technical soccer
+                            background, expertise, accomplishments or standing.
+                        </li>
+                    </ul>
+                    <h3>FIFA FIELD REGULATIONS</h3>
+                    <ul class="numeros">
+                        <li>
+                            <p><b>DIMENSIONS. </b>FIFA Law 1 provides for flexible external field dimensions within
+                                a given maximum and minimum width and length. These dimensions should be adhered to
+                                for all fields used by teams under 12 and older.
+                            </p>
+                        </li>
+                        <li>
+                            <p><b>COMPETITION FIELDS. </b>Fields used within the competition program must be a
+                                minimum of 100 x 60 yards.Leagues, districts or associations participating in the
+                                state competition program that are unable to provide a field
+                                that meets these minimum requirements must advise the State Competition Board which
+                                will assign its Fields Committee to inspect the field and recommend to the Board
+                                whether or not a waiver of the minimum dimensions should
+                                be granted. Teams from leagues, districts or associations that are unable to provide
+                                an acceptable field may be required to play all their games away.
+                            </p>
+                        </li>
+                        <li>
+                            <p><b>FIELDS USED BY YOUNG AGE GROUPS </b>
+                                <ul class="letras">
+                                    <li>U-6 play on a field approximately 20 X 40 yards with no penalty areas.
+                                        Fields for older age groups should be progressively larger.
+                                    </li>
+                                    <li>
+                                        U-8 plays on a field 40-50 yards in length and 20-30 yards width.
+                                    </li>
+                                    <li>
+                                        U-10 play on a field 70-80 yards in length and 40-50 yards in width.
+                                    </li>
+                                    <li>In addition, fields used by young age groups may have their internal
+                                        dimensions and size of goal similarly modified.
+                                    </li>
+                                </ul>
+                            </p>
+                        </li>
+                    </ul>
+                    </li>
+                    <h3>ALL-PLAY</h3>
+                    <ul class="cuadrados">
+                        <li>All-play means that every recreation player on every team shall play atleast fifty
+                            percent of each game. Coaches in the competition program are encouraged to play their
+                            players 50% of each game.
+                        </li>
+                        <ul class="circulos">
+                            <li>
+                                A Coach shall be permitted to not play a player 50% of each game under special
+                                circumstances, e.g., unexcused absences from practice and/or games, ungentlemanly
+                                conduct at practice and/or games, and injuries.
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="game_info" class="pagina d-none">
+        <header class="container" id="titulo">
+            <h1>Northside Youth Soccer League</h1>
+        </header>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-1 leftNav">
+                </div>
+                <div class="col-md-10 content">
+                    <p>Fall Schedule</p>
+                    <p><u>* All games take place on Saturday.</u></p>
+                </div>
+            </div>
+
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item list-group-item-dark">SEPTEMBER</li>
+                <li class="list-group-item">
+                    <h3><span class="badge badge-secondary">9/01</span></h3>
+                    <div class="accordion" id="accordionExample">
+                        <div class="card">
+                            <div class="card-header" id="headingOne">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        U1 and U4 1:00 p.m.
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseOne" class="collapse" aria-labelledby="headingOne"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <td>
+                                        <h4><span class="badge badge-secondary">AJ Katzenmaier</span></h4>
+                                        <br><iframe
+                                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13140.315293535316!2d-58.40421764192247!3d-34.5768720304357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb564f74f69c3%3A0xeea87be2795e86d2!2sMuseo%20de%20Arte%20Latinoamericano!5e0!3m2!1ses-419!2sar!4v1570461674490!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="headingTwo">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        U3 and U2 9:30 a.m.
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo"
+                                data-parent="#accordionExample">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary">Greenbay</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13140.315293535316!2d-58.40421764192247!3d-34.5768720304357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb564f74f69c3%3A0xeea87be2795e86d2!2sMuseo%20de%20Arte%20Latinoamericano!5e0!3m2!1ses-419!2sar!4v1570461674490!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <h3><span class="badge badge-secondary">9/08</span></h3>
+                    <div class="accordion" id="accordion2">
+                        <div class="card">
+                            <div class="card-header" id="headingThree">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapseThree" aria-expanded="false"
+                                        aria-controls="collapseThree">
+                                        U5 and U6 9:30 a.m.
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapseThree" class="collapse" aria-labelledby="headingThree"
+                                data-parent="#accordion2">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary">Howard A Yeager</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13138.335001365605!2d-58.38554306884144!3d-34.58939753740915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccab595993163%3A0xb5d975299fbe9750!2sPlaza%20General%20San%20Mart%C3%ADn!5e0!3m2!1ses-419!2sar!4v1570461322344!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading4">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                                        U6 and U1 1:00 p.m.
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapse4" class="collapse" aria-labelledby="heading4" data-parent="#accordion2">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary">Marjorie P Har</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13138.335001365605!2d-58.38554306884144!3d-34.58939753740915!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccab595993163%3A0xb5d975299fbe9750!2sPlaza%20General%20San%20Mart%C3%ADn!5e0!3m2!1ses-419!2sar!4v1570461322344!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <h3><span class="badge badge-secondary">9/15</span></h3>
+                    <div class="accordion" id="accordion3">
+                        <div class="card">
+                            <div class="card-header" id="heading5">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapse5" aria-expanded="false" aria-controls="collapse5">
+                                        U2 and U4 9:30 a.m.
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapse5" class="collapse" aria-labelledby="heading5" data-parent="#accordion3">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary">North</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52544.866795151436!2d-58.4207826208983!3d-34.602791577208095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb2fd4e4622f%3A0xc2b9abf07dd923c7!2sPlaza%20Constituci%C3%B3n!5e0!3m2!1ses-419!2sar!4v1570461041806!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading6">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                                        U3 and U5 1:00 p.m.
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapse6" class="collapse" aria-labelledby="heading6" data-parent="#accordion3">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary">AJ Katzenmaier</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52544.866795151436!2d-58.4207826208983!3d-34.602791577208095!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccb2fd4e4622f%3A0xc2b9abf07dd923c7!2sPlaza%20Constituci%C3%B3n!5e0!3m2!1ses-419!2sar!4v1570461041806!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <h3><span class="badge badge-secondary">9/22</span></h3>
+                    <div class="accordion" id="accordion4">
+                        <div class="card">
+                            <div class="card-header" id="heading7">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapse7" aria-expanded="false" aria-controls="collapse7">
+                                        U1 and U3 9:30 a.m.
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapse7" class="collapse" aria-labelledby="heading7" data-parent="#accordion4">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary">South</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26277.046887526758!2d-58.45220158351482!3d-34.58820579507969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43ae6018ddf%3A0x3d7f60a75bfa308a!2sEstadio%20Monumental%20Antonio%20Vespucio%20Liberti!5e0!3m2!1ses-419!2sar!4v1570461124134!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" id="heading8">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse"
+                                        data-target="#collapse8" aria-expanded="false" aria-controls="collapse8">
+                                        U2 and U6 1:00 p.m.
+                                    </button>
+                                </h2>
+                            </div>
+                            <div id="collapse8" class="collapse" aria-labelledby="heading8" data-parent="#accordion4">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary">Howard A Yeager</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26277.046887526758!2d-58.45220158351482!3d-34.58820579507969!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb43ae6018ddf%3A0x3d7f60a75bfa308a!2sEstadio%20Monumental%20Antonio%20Vespucio%20Liberti!5e0!3m2!1ses-419!2sar!4v1570461124134!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li class="list-group-item">
+                    <h3><span class="badge badge-secondary">9/29</span></h3>
+                    <div class="accordion" id="accordion5">
+                        <div class="card">
+                            <div class="card-header" id="heading9">
+                                <h2 class="mb-0">
+                                    <button class="btn btn-link" type="button" data-toggle="collapse"
+                                        data-target="#collapse9" aria-expanded="false" aria-controls="collapse9">
+                                        U4 and U5 9:30 a.m.
+                                    </button>
+                                </h2>
+                            </div>
+
+                            <div id="collapse9" class="collapse" aria-labelledby="heading9" data-parent="#accordion5">
+                                <div class="card-body">
+                                    <h4><span class="badge badge-secondary"> Greenbay</span></h4><iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13140.315293535316!2d-58.40421764192247!3d-34.5768720304357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb564f74f69c3%3A0xeea87be2795e86d2!2sMuseo%20de%20Arte%20Latinoamericano!5e0!3m2!1ses-419!2sar!4v1570461674490!5m2!1ses-419!2sar"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <footer class="container">
+            <p><b>Facility Type:</b> Outdoor</p>
+            <p><b>Additional Information:</b> If deemed necessary by NYSL, games may be shortened or cancelled due
+                to extreme weather conditions.</p>
+            <p><b>Please direct all questions to:</b> Michael Randall, League Coordinator</p>
+            <p><b>Phone:</b>(630) 690-8132</p>
+            <p><b>Email:</b>michael.randall@chisoccer.org</p>
+        </footer>
+    </div>
+    <div id="registration" class="pagina d-none">
+        <header class="container" id="titulo">
+            <h1>Northside Youth Soccer League</h1>
+        </header>
+        <section class="container">
+            <div class="row">
+                <div class="col-md-12 content">
+                    <form action="show_data.html" method="GET">
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="name">Player’s First Name</label>
+                                <input type="text" class="form-control" id="name">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="last_name">Last Name</label>
+                                <input type="text" class="form-control" id="last_name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="street_address">Street Address</label>
+                                <input type="text" class="form-control" id="street_address">
+                            </div>
+                            <div class="form-group col-md-4">
+                                <label for="city">City</label>
+                                <input type="text" class="form-control" id="city">
+                            </div>
+                            <div class="form-group col-md-2">
+                                <label for="zip">Zip</label>
+                                <input type="text" class="form-control" id="zip">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-3">
+                                <label for="birth_date">Birth Date</label>
+                                <input type="date" class="form-control" id="birth_date">
+                            </div>
+                            <fieldset class="form-group">
+                                <div class="row">
+                                    <legend class="col-form-label col-sm-3 pt-0">Gender</legend>
+                                    <div class="col-sm-6">
+                                        <div class="form-check custom-control-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                value="h" checked>
+                                            <label class="form-check-label" for="gender">
+                                                Hombre
+                                            </label>
+                                        </div>
+                                        <div class="form-check custom-control-inline">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender2"
+                                                value="m">
+                                            <label class="form-check-label" for="gender2">
+                                                Mujer
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="grade">Grade</label>
+                                <select id="grade" class="form-control">
+                                    <option selected>Pre-School</option>
+                                    <option>1st</option>
+                                    <option>2nd</option>
+                                    <option>3rd</option>
+                                    <option>4th</option>
+                                    <option>5th</option>
+                                </select>
+                            </div>
+                        </div>
+                        <h3>Which elementary school do you live near? </h3>
+                        <fieldset class="form-group">
+                            <div class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">
+                                    Closest School
+                                </legend>
+                                <div class="col-sm-10">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Closest School"
+                                            id="gridRadios1" value="AJ Katzenmaier" checked>
+                                        <label class="form-check-label" for="gridRadios1">
+                                            AJ Katzenmaier
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Closest School"
+                                            id="gridRadios2" value="Marjorie P Hart">
+                                        <label class="form-check-label" for="gridRadios2">
+                                            Marjorie P Hart
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Closest School"
+                                            id="gridRadios3" value="Greenbay">
+                                        <label class="form-check-label" for="gridRadios3">
+                                            Greenbay
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Closest School"
+                                            id="gridRadios4" value="North Elementary">
+                                        <label class="form-check-label" for="gridRadios4">
+                                            North Elementary
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Closest School"
+                                            id="gridRadios5" value="Howard A Yeager">
+                                        <label class="form-check-label" for="gridRadios5">
+                                            Howard A Yeager
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="Closest School"
+                                            id="gridRadios6" value="South Elementary">
+                                        <label class="form-check-label" for="gridRadios6">
+                                            South Elementary
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                        <h3>What position(s) do you normally play? (check all that apply)</h3>
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="gridCheck1" name="Position"
+                                    value="Forward">
+                                <label class="form-check-label" for="gridCheck1">
+                                    Forward
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="gridCheck2" name="Position"
+                                    value="Midfield">
+                                <label class="form-check-label" for="gridCheck2">
+                                    Midfield
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="gridCheck3" name="Position"
+                                    value="Defense">
+                                <label class="form-check-label" for="gridCheck3">
+                                    Defense
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="gridCheck4" name="Position"
+                                    value="Goalkeeper">
+                                <label class="form-check-label" for="gridCheck4">
+                                    Goalkeeper
+                                </label>
+                            </div>
+                        </div>
+                        <h3>Uniform Size:</h3>
+                        <div class="form-group">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Uniform Size" id="exampleRadios1"
+                                    value="Youth Smal" checked>
+                                <label class="form-check-label" for="exampleRadios1">
+                                    Youth Smal
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Uniform Size" id="exampleRadios2"
+                                    value="Medium">
+                                <label class="form-check-label" for="exampleRadios2">
+                                    Medium
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Uniform Size" id="exampleRadios3"
+                                    value="Youth Medium">
+                                <label class="form-check-label" for="exampleRadios3">
+                                    Youth Medium
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Uniform Size" id="exampleRadios4"
+                                    value="Large">
+                                <label class="form-check-label" for="exampleRadios4">
+                                    Large
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Uniform Size" id="exampleRadios5"
+                                    value="Youth Large">
+                                <label class="form-check-label" for="exampleRadios5">
+                                    Youth Large
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Uniform Size" id="exampleRadios6"
+                                    value="Extra-Large">
+                                <label class="form-check-label" for="exampleRadios6">
+                                    Extra-Large
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="radio" name="Uniform Size" id="exampleRadios7"
+                                    value="Small">
+                                <label class="form-check-label" for="exampleRadios7">
+                                    Small
+                                </label>
+                            </div>
+                        </div>
+                        <h4>Permission to Play</h4>
+                        <p>I, the parent or guardian of the minor registrant, agree that the registrant and I will
+                            abide by all the rules of the Northside Youth Soccer League (NYSL). In recognizing the
+                            possibility of physical injury associated with soccer
+                            and in consideration for the “League” accepting the registrant for its soccer programs
+                            and activities, I hereby release, discharge, and/or otherwise indemnify NYSL, their
+                            employees and associated personnel and volunteers,including
+                            the facilities used for practices and games, against any claim by or on behalf of the
+                            registrant as a result of the registrant’s participation in the programand/orbeing
+                            transported to or from NYSL sponsored activities,which
+                            transportation
+                        </p>
+                        <p>By signing below, I herebyagree andauthorizethe above.In addition, by signing below,
+                            Ialso acknowledge that I have read the cancellation policy and agree to its terms.
+                        </p>
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label for="parent">Parent/GuardianSignature</label>
+                                <input type="text" class="form-control" id="parent">
+                            </div>
+                            <div class="form-group col-md-6">
+                                <label for="date">Date</label>
+                                <input type="date" class="form-control" id="date">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="/__/firebase/7.6.0/firebase-app.js"></script>
+    <script src="/__/firebase/7.6.0/firebase-auth.js"></script>
+    <script src="/__/firebase/7.6.0/firebase-database.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="/__/firebase/7.6.0/firebase-analytics.js"></script>
+
+    <!-- Initialize Firebase -->
+    <script src="/__/firebase/init.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.0/js/bootstrap.min.js"
+        integrity="sha384-3qaqj0lc6sV/qpzrc1N5DC6i1VRn/HyX4qdPaiEFbn54VjQBEU341pvjz7Dv3n6P"
+        crossorigin="anonymous"></script>
+    <script src="main.js">
+    </script>
+</body>
+
+</html>

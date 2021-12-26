@@ -1,0 +1,19 @@
+.cuadrados {
+    list-style-type: square;
+}
+
+.letras {
+    list-style-type: lower-alpha;
+}
+
+.numeros {
+    list-style-type: decimal;
+}
+
+.circulos {
+    list-style-type: circle;
+}
+
+.sangria {
+    margin-left: 5%;
+}
